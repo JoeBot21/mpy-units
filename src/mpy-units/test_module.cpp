@@ -1,6 +1,7 @@
 #include <python3.13/Python.h>
 
-import test_cpp_module;
+#include "test_module.hpp"
+
 
 static PyObject * hello_world(PyObject *self, PyObject *args) {
   return Py_BuildValue("s", test_cpp_module::hello_world_cpp().c_str());

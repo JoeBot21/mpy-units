@@ -1,10 +1,9 @@
-module;
-
 #include <string>
 
-export module test_cpp_module;
+#include <mp-units/systems/si.h>
 
-export namespace test_cpp_module {
+
+namespace test_cpp_module {
 
   std::string hello_world_cpp() {
     return "Hello world, from C++";
