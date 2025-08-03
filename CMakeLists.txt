@@ -19,12 +19,12 @@ FetchContent_Declare(
     GIT_TAG d9dce46c21f6d915424112fd8b5e2163addc051b
     SOURCE_SUBDIR src
 )
-set(MP_UNITS_BUILD_CXX_MODULES OFF)
+set(MP_UNITS_BUILD_CXX_MODULES ON)
 set(MP_UNITS_API_STD_FORMAT ON)
 FetchContent_MakeAvailable(mp-units)
 
 # Compile library
 add_library(mpy-units SHARED src/mpy-units/test_module.cpp)
 target_sources(mpy-units PRIVATE FILE_SET CXX_MODULES
-    FILES ${PROJECT_SOURCE_DIR}/src/mpy-units/test_cpp_module.cpp)
-target_link_libraries(mpy-units PUBLIC mp-units::mp-units)
+    FILES ${PROJECT_SOURCE_DIR}/src/mpy-units/cpp_module.cpp)
+target_link_libraries(mpy-units PRIVATE mp-units::mp-units)
