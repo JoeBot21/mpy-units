@@ -19,7 +19,7 @@ FetchContent_Declare(
     GIT_TAG d9dce46c21f6d915424112fd8b5e2163addc051b
     SOURCE_SUBDIR src
 )
-set(MP_UNITS_BUILD_CXX_MODULES ON)
+set(MP_UNITS_BUILD_CXX_MODULES OFF)
 set(MP_UNITS_API_STD_FORMAT ON)
 FetchContent_MakeAvailable(mp-units)
 

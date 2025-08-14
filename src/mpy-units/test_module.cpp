@@ -1,13 +1,13 @@
+import cpp_module;
+
 #include <python3.13/Python.h>
 
 #include <mp-units/systems/si.h>
 
-// import cpp_module;
-// 
-// 
-// static PyObject * hello_world(PyObject *self, PyObject *args) {
-  // return Py_BuildValue("s", cpp_module::hello_world_cpp().c_str());
-// }
+
+static PyObject * hello_world(PyObject *self, PyObject *args) {
+  return Py_BuildValue("s", cpp_module::hello_world_cpp().c_str());
+}
 
 static PyObject * hello_world(PyObject *self, PyObject *args) {
   return Py_BuildValue("s", "Hello, World!");

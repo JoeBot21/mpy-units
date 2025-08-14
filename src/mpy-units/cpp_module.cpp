@@ -2,6 +2,8 @@ module;
 
 #include <string>
 
+#include <mp-units/systems/si.h>
+
 
 export module cpp_module;
 
