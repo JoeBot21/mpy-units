@@ -1,8 +1,6 @@
-import cpp_module;
-
 #include <python3.13/Python.h>
 
-#include <mp-units/systems/si.h>
+#include "test_module.hpp"
 
 
 static PyObject * hello_world(PyObject *self, PyObject *args) {

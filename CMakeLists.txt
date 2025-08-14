@@ -25,6 +25,6 @@ FetchContent_MakeAvailable(mp-units)
 
 # Compile library
 add_library(mpy-units SHARED src/mpy-units/test_module.cpp)
-target_sources(mpy-units PRIVATE FILE_SET CXX_MODULES
-    FILES ${PROJECT_SOURCE_DIR}/src/mpy-units/cpp_module.cpp)
-target_link_libraries(mpy-units PRIVATE mp-units::mp-units)
+target_sources(mpy-units PRIVATE FILE_SET HEADERS
+  FILES ${PROJECT_SOURCE_DIR}/src/mpy-units/test_module.hpp)
+target_link_libraries(mpy-units PUBLIC mp-units::mp-units)
