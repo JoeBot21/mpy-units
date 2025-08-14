@@ -7,10 +7,6 @@ static PyObject * hello_world(PyObject *self, PyObject *args) {
   return Py_BuildValue("s", cpp_module::hello_world_cpp().c_str());
 }
 
-static PyObject * hello_world(PyObject *self, PyObject *args) {
-  return Py_BuildValue("s", "Hello, World!");
-}
-
 static PyMethodDef module_functions[] = {
     {"hello_world", hello_world, METH_VARARGS, "Say hello."},
     {NULL, NULL, 0, NULL}
