@@ -1,4 +1,7 @@
-#include <python3.13/Python.h>
+import std;
+
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
 
 #include "test_module.hpp"
 

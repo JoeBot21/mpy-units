@@ -11,6 +11,9 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
     message(FATAL_ERROR "In-source builds are not allowed")
 endif()
 
+# Find system libraries
+find_package(Python COMPONENTS Development)
+
 # Add mp-units
 include(FetchContent)
 FetchContent_Declare(
@@ -24,7 +27,8 @@ set(MP_UNITS_API_STD_FORMAT ON)
 FetchContent_MakeAvailable(mp-units)
 
 # Compile library
-add_library(mpy-units SHARED src/mpy-units/test_module.cpp)
+add_library(mpy-units SHARED src/mpy-units/mpy-units.cpp)
 target_sources(mpy-units PRIVATE FILE_SET HEADERS
   FILES ${PROJECT_SOURCE_DIR}/src/mpy-units/test_module.hpp)
+target_include_directories(mpy-units PRIVATE ${Python_INCLUDE_DIRS})
 target_link_libraries(mpy-units PUBLIC mp-units::mp-units)
